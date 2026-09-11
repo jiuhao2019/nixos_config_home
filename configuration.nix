@@ -155,7 +155,7 @@
       fcitx5.addons = with pkgs; [
         rime-data
         fcitx5-gtk
-        fcitx5-nord
+        fcitx5-gruvbox
         fcitx5-rime
       ];
     };
