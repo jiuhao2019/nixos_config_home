@@ -22,7 +22,6 @@
   xdg.configFile."rofi".source = ./.config/rofi;
   xdg.configFile."dunst".source = ./.config/dunst;
   xdg.configFile."lf".source = ./.config/lf;
-  xdg.configFile."starship.toml".source = ./.config/starship.toml;
   home.packages = with pkgs;[
     mermaid-cli
     plantuml
