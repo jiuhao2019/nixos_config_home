@@ -23,7 +23,6 @@
   xdg.configFile."rofi".source = ./.config/rofi;
   xdg.configFile."dunst".source = ./.config/dunst;
   xdg.configFile."lf".source = ./.config/lf;
-  xdg.configFile."fcitx5" .source = ./.config/fcitx5;
   home.packages = with pkgs;[
     mermaid-cli
     plantuml
