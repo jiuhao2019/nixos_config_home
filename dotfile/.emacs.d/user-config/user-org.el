@@ -108,6 +108,11 @@
 ;; 右边提示有括号，符号不用下划线
 (set-face-attribute 'org-ellipsis nil :underline nil)
 
+(defun my-org-open-at-point-in-tab ()
+  (interactive)
+  (tab-new)
+  (org-open-at-point))
+
 ;; 所有 #+begin_src xxx 和 #+end_src 本身字符都会被隐藏
 (defun my/org-hide-block-delimiters ()
   "Hide #+begin_xxx / #+end_xxx lines in org-mode."
