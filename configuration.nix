@@ -38,7 +38,6 @@
     wget
     curl
     git
-    fish
     clash-verge-rev
     webkitgtk_4_1
   ];
@@ -70,6 +69,7 @@
 
   programs.fuse.userAllowOther = true;
   programs.thunar.enable = true;
+  programs.fish.enable = true;
   programs.dconf.enable = true;
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
