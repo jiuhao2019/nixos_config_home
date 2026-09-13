@@ -67,7 +67,7 @@
 ☞ org-link
 [_o_]open [_t_]toggle-display
   "
-  ( "o"   #'my-org-open-at-point-in-tab )
+  ( "o"   org-open-at-point )
   ( "t"   org-toggle-link-display )
   ( "q"   keyboard-quit :color blue))
 
