@@ -113,7 +113,6 @@
   (tab-new)
   (apply orig-fun args))
 (advice-add 'org-open-at-point :around #'my-org-open-at-point-in-tab)
-(global-set-key (kbd "C-o l") #'my-org-open-at-point-in-tab)
 
 ;; 所有 #+begin_src xxx 和 #+end_src 本身字符都会被隐藏
 (defun my/org-hide-block-delimiters ()
