@@ -269,25 +269,5 @@
 (setq valign-resize-separator t)
 (setq valign-autorefresh-rate 1.5)  ;; 刷新
 (add-hook 'org-mode-hook #'valign-mode)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                             end of org
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                             org-super links
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(require 'org-super-links)
-(setq org-super-links-related-into-drawer t)
-(setq org-super-links-backlink-drawer "BACKLINKS")
-
-(require 'imenu-list)
-(setq imenu-list-focus-after-activation t)
-(setq imenu-list-auto-resize t)
-(setq imenu-list-after-jump-hook nil)
-(add-hook 'imenu-list-after-jump-hook #'recenter-top-bottom)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                             end of org-node
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'user-org)
