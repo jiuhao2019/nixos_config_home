@@ -66,7 +66,6 @@
     ripgrep
     xclip
     tree
-    pkgs.apple-cursor
     pkgs.bibata-cursors
     pkgs.graphite-cursors
     pkgs.comixcursors
