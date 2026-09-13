@@ -66,10 +66,10 @@
     ripgrep
     xclip
     tree
-    apple-cursors
-    bibata-cursors
-    graphite-cursors
-    comixcursors
+    pkgs.apple-cursor
+    pkgs.bibata-cursors
+    pkgs.graphite-cursors
+    pkgs.comixcursors
   ];
   home.pointerCursor = {
     enable = true;
