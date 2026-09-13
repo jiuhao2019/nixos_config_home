@@ -111,7 +111,8 @@
 ;; link打开用tab而不是默认的split
 (defun my-org-open-at-point-in-tab (orig-fun &rest args)
   (tab-new)
-  (apply orig-fun args))
+  (apply orig-fun args)
+  (delete-other-windows))
 (advice-add 'org-open-at-point :around #'my-org-open-at-point-in-tab)
 (global-set-key (kbd "C-c o") #'org-open-at-point)
 
