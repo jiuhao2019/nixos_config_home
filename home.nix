@@ -66,7 +66,7 @@
     ripgrep
     xclip
     tree
-    apple-cursor
+    apple-cursors
     bibata-cursors
     graphite-cursors
     comixcursors
