@@ -49,7 +49,6 @@
     gruvbox-dark-gtk
     gruvbox-dark-icons-gtk
     python3
-	links2
   ];
   gtk = {
     enable = true;
