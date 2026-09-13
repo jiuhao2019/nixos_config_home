@@ -13,19 +13,16 @@ set -Ux VISUAL nvim
 set -gx PATH /usr/local/bin $PATH
 set -gx PATH /usr/bin $PATH
 
-abbr l  "eza -1a"
-abbr ll "eza -1al"
 abbr ls "eza"
+abbr ll "eza -al --git"
 abbr lt "eza -T"
-abbr la "eza -la"
-abbr lg "eza -l --git"
 abbr ld "eza -lD"
 
-abbr gc "git commit"
-abbr ga "git add ."
+function gs
+    git add . && git commit -m (date '+%Y-%m-%d %H:%M:%S') && git push
+end
 abbr gd "git diff"
 abbr gl "git pull"
-abbr gs "git push"
 
 abbr rm "rm -irv"
 
