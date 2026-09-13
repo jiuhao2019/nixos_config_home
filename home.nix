@@ -65,8 +65,20 @@
     fd
     ripgrep
     xclip
-	tree
+    tree
+    apple-cursor
+    bibata-cursors
+    graphite-cursors
+    comixcursors
   ];
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 24;
+    x11.enable = true;
+    gtk.enable = true;
+  };
   gtk = {
     enable = true;
     theme = {
