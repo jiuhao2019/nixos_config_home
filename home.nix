@@ -49,7 +49,6 @@
     gruvbox-dark-gtk
     gruvbox-dark-icons-gtk
     python3
-	palemoon-bin
   ];
   gtk = {
     enable = true;
