@@ -67,14 +67,12 @@
     xclip
     tree
     pkgs.bibata-cursors
-    pkgs.comixcursors
   ];
   home.pointerCursor = {
     enable = true;
-    package = pkgs.comixcursors;
-    # name = "Bibata-Modern-Amber";
-    name = "ComixCursors";
-    size = 24;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Amber";
+    size = 23;
     x11.enable = true;
     gtk.enable = true;
   };
