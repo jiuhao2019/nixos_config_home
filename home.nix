@@ -49,7 +49,7 @@
     gruvbox-dark-gtk
     gruvbox-dark-icons-gtk
     python3
-	pkgs.falkon
+	pkgs.falcon
   ];
   gtk = {
     enable = true;
