@@ -47,6 +47,8 @@ require("plugin.tagbar")
 
 -- for locate open file
 require("plugin.neo-tree")
+
+require("plugin.noice")
 ---- ---------------------------------------- 自定义的功能函数
 require("functions.quickfix_next").setup()
 require("functions.multi_substitue").setup()
