@@ -49,7 +49,7 @@
     gruvbox-dark-gtk
     gruvbox-dark-icons-gtk
     python3
-	kdePackages.falkon
+	palemoon-bin
   ];
   gtk = {
     enable = true;
