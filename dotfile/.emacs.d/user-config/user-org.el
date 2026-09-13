@@ -207,7 +207,8 @@
 
 (defcustom my-org-directories
   '("~/Downloads/note/capture-file/"
-    "~/Downloads/note/org-files/")
+    "~/Downloads/note/org-files/"
+    "~/Downloads/note/org-category/")
   "Directories containing Org files used as refile targets."
   :type '(repeat directory)
   :group 'org)
@@ -245,17 +246,9 @@
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
 
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;                      slice Image display
-; 将插入的image显示为切割模式，以规避滚动时大图片跳闪
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'org-sliced-images)
 (org-sliced-images-mode 1)
 
-
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;                                 valign,含中文的表格能对齐
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'valign)
 (setq valign-max-table-size 10000)  ;; 表格内容超过字节,自动跳过处理表格
 (setq valign-fancy-bar t)         ;; 竖线全高，与文本对齐
