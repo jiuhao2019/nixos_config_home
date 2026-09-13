@@ -113,6 +113,7 @@
   (tab-new)
   (apply orig-fun args))
 (advice-add 'org-open-at-point :around #'my-org-open-at-point-in-tab)
+(global-set-key (kbd "C-o l") #'my-org-open-at-point-in-tab)
 
 ;; 所有 #+begin_src xxx 和 #+end_src 本身字符都会被隐藏
 (defun my/org-hide-block-delimiters ()
@@ -146,12 +147,12 @@
 ;; ;;;;;;;;;;;;;;;;;
 ;; 设置tag背景和前景色
 ;; ;;;;;;;;;;;;;;;;;
-;; (custom-set-faces
-;;  '(org-tag
-;;    ((t (:foreground "white"
-;; 		    :background "#5f87ff"
-;; 		    :weight bold
-;; 		    :height 0.8)))))
+ (custom-set-faces
+  '(org-tag
+    ((t (:foreground "white"
+ 		    :background "#5f87ff"
+ 		    :weight bold
+ 		    :height 0.8)))))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Add frame borders and window dividers
