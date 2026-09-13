@@ -23,6 +23,7 @@
   xdg.configFile."rofi".source = ./.config/rofi;
   xdg.configFile."dunst".source = ./.config/dunst;
   xdg.configFile."lf".source = ./.config/lf;
+
   home.packages = with pkgs;[
     mermaid-cli
     plantuml
@@ -40,15 +41,30 @@
     clang-tools
     emacs
     btop  
-    fastfetch
     neovim
-    wezterm
     picom
     rofi
     dunst
     gruvbox-dark-gtk
     gruvbox-dark-icons-gtk
     python3
+    ungoogled-chromium
+    cmake
+    ninja
+    gcc-arm-embedded
+    usbutils
+    fastfetch
+    nh
+    open-vm-tools
+    eza 
+    lf
+    wezterm
+    tmux
+    unzip
+    fd
+    ripgrep
+    xclip
+	tree
   ];
   gtk = {
     enable = true;
@@ -61,7 +77,6 @@
       package = pkgs.gruvbox-dark-icons-gtk;
     };
   };
-
   programs.git = {
     enable = true;
     settings = {
@@ -72,5 +87,10 @@
       init.defaultBranch = "main";
     };
   };
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   home.stateVersion = "26.05";
 }
