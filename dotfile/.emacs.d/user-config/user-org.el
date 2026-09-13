@@ -1,8 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                           org
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'org)
 ;; capture目录
 (defvar my-capture-directory "~/Downloads/note/capture-file/")
@@ -182,12 +179,10 @@
 
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                           org-bullets
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+(require 'org-bullets)
+(setq org-bullets-bullet-list '("⓿" "❶" "❷" "❸" "❹" "❺" "❻" "❼" "❽" "❾"))
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; Org Agenda files
 ;; ============================================================
 ;; 只有这里的文件参与 Agenda
