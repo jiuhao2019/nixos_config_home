@@ -74,9 +74,10 @@
 (defhydra hydra-org-block (:color blue :hint nil )
   "
 ☞ org-block
-[_i_]insert
+[_I_]insert-select  [_i_]insert-c-src
   "
-  ("i"   org-insert-structure-template)
+  ("I"   org-insert-structure-template)
+  ("i"   my-org-region-to-c-src)
   ("q"   keyboard-quit :color blue))
 
 (defhydra hydra-org-note (:color blue :hint nil )

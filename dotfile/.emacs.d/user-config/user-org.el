@@ -189,7 +189,17 @@
 (setq org-outline-path-complete-in-steps nil)
 
 (require 'org-bullets)
-(setq org-bullets-bullet-list '("⓿" "❶" "❷" "❸" "❹" "❺" "❻" "❼" "❽" "❾"))
+;;(setq org-bullets-bullet-list '("⓿" "❶" "❷" "❸" "❹" "❺" "❻" "❼" "❽" "❾"))
+;;(setq org-bullets-bullet-list '("🀆" "🀙" "🀚" "🀛" "🀜" "🀝" "🀞" "🀟" "🀠" "🀡"))
+;;(setq org-bullets-bullet-list '("🀆" "🀇" "🀈" "🀉" "🀊" "🀋" "🀌" "🀍" "🀎" "🀏"))
+;;(setq org-bullets-bullet-list '("🀆" "🀐" "🀑" "🀒" "🀓" "🀔" "🀕" "🀖" "🀗" "🀘"))
+;;从左到右依次为 白羊座、金牛座、双子座、巨蟹座、狮子座、处女座、天秤座、天蝎座、射手座、摩羯座、水瓶座、双鱼座
+;;(setq org-bullets-bullet-list '("♈" "♉" "♊" "♋" "♌" "♍" "♎" "♏" "♐" "♑" "♒" "♓" ))
+;;(setq org-bullets-bullet-list '("㊀" "㊁" "㊂" "㊃" "㊄" "㊅" "㊆" "㊇" "㊈" ))
+;;(setq org-bullets-bullet-list '("𝒜" "ℬ" "𝒞" "𝒟" "ℰ" "ℱ" "𝒢" "ℋ" "ℐ" "𝒥"))
+(setq org-bullets-bullet-list '("⁰" "¹" "²" "³" "⁴" "⁵" "⁶" "⁷" "⁸" "⁹"))
+;;(setq org-bullets-bullet-list '("₀" "₁" "₂" "₃" "₄" "₅" "₆" "₇" "₈" "₉"))
+;;(setq org-bullets-bullet-list '("①" "②" "③" "④" "⑤" "⑥" "⑦" "⑧" "⑨"))
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; Org Agenda files
 ;; ============================================================
@@ -265,5 +275,16 @@
 (setq valign-resize-separator t)
 (setq valign-autorefresh-rate 1.5)  ;; 刷新
 (add-hook 'org-mode-hook #'valign-mode)
+
+(defun my-org-region-to-c-src (beg end)
+  "Wrap region in an Org C source block."
+  (interactive "r")
+  (let ((text (string-trim-right
+               (buffer-substring-no-properties beg end))))
+    (delete-region beg end)
+    (insert "#+begin_src C\n"
+            text
+            "\n#+end_src")))
+;;(global-set-key (kbd "C-c C-b c") #'my-org-region-to-c-src)
 
 (provide 'user-org)
