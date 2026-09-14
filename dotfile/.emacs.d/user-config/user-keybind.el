@@ -112,10 +112,11 @@
   "
 ☞ org-misc
 [_i_]toggle-inline-img  [_o_]export-html [_n_]narrow-to-subtree
-[_l_]imenu-list
+[_l_]imenu-list  [_h_]html-to-org
   "
   ( "i"   org-toggle-inline-images )
   ( "o"   org-html-export-to-html )
+  ( "h"   my-html-to-org )
   ( "n"   org-toggle-narrow-to-subtree )
   ( "l"   imenu-list-smart-toggle )
   ( "q"   keyboard-quit :color blue))
