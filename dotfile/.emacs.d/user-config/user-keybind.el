@@ -112,7 +112,7 @@
   "
 ☞ org-misc
 [_i_]toggle-inline-img  [_o_]export-html [_n_]narrow-to-subtree
-[_l_]imenu-list  [_h_]html-to-org
+[_h_]html-to-org
   "
   ( "i"   org-toggle-inline-images )
   ( "o"   org-html-export-to-html )
