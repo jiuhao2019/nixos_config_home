@@ -118,7 +118,6 @@
   ( "o"   org-html-export-to-html )
   ( "h"   my-html-to-org )
   ( "n"   org-toggle-narrow-to-subtree )
-  ( "l"   imenu-list-smart-toggle )
   ( "q"   keyboard-quit :color blue))
 
 (defhydra hydra-org (:color blue :hint nil )
@@ -153,11 +152,14 @@
 (defhydra hydra-file (:color blue :hint nil )
   "
 ☞ file
-[_d_]dired [_e_]ranger [_r_]rg
+[_d_]dired           [_e_]ranger  [_r_]rg  [_o_]old-file-open
+[_c_]old-file-clear
   "
   ("d"   dired)
   ("e"   ranger)
   ("r"   rgrep)
+  ("o"   my-recent-files-open)
+  ("c"   my-recent-files-clear)
   ("q"   keyboard-quit :color blue))
 
 (defhydra hydra-motion (:color blue :hint nil )

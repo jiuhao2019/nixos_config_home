@@ -108,3 +108,7 @@ function lf
 
     rm -f $tmp
 end
+if status is-login
+    and isatty stdin
+    startx
+end
