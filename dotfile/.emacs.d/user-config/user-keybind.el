@@ -183,8 +183,8 @@
   "
   ("a"   toggle-truncate-lines)
   ("c"   my/clean-buffers)
-  ("|"   evil-window-split)
-  ("-"   evil-window-vsplit)
+  ("|"   evil-window-vsplit)
+  ("-"   evil-window-split)
   ("w"   delete-trailing-whitespace)
   ("q"   keyboard-quit :color blue))
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
