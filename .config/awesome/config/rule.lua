@@ -99,7 +99,7 @@ awful.rules.rules = {
 		rule = { class = "Chromium" },
 		properties = {
 			screen = 1,
-			tag = "⒉    ",
+			tag = "⒉   ",
 			switch_to_tags = true,
 		},
 	},
@@ -107,14 +107,14 @@ awful.rules.rules = {
 		rule_any = { class = { "emacs", "Emacs" } },
 		properties = {
 			screen = 1,
-			tag = "⒊    ",
+			tag = "⒊   ",
 			switch_to_tags = true,
 			size_hints_honor = false,
 		},
 	},
 	{
 		rule_any = { class = { "thunar", "Thunar" } },
-		properties = { screen = 1, tag = "⒋", switch_to_tags = true, placement = awful.placement.centered },
+		properties = { screen = 1, tag = "⒋   ", switch_to_tags = true, placement = awful.placement.centered },
 	},
 	{
 		rule_any = {
