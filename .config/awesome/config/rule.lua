@@ -80,7 +80,7 @@ awful.rules.rules = {
 		properties = {
 			size_hints_honor = false,
 			screen = 1,
-			tag = "⒈",
+			tag = "⒈   ",
 			switch_to_tags = true,
 			placement = awful.placement.centered,
 		},
@@ -99,7 +99,7 @@ awful.rules.rules = {
 		rule = { class = "Chromium" },
 		properties = {
 			screen = 1,
-			tag = "⒉",
+			tag = "⒉    ",
 			switch_to_tags = true,
 		},
 	},
@@ -107,13 +107,13 @@ awful.rules.rules = {
 		rule_any = { class = { "emacs", "Emacs" } },
 		properties = {
 			screen = 1,
-			tag = "⒊",
+			tag = "⒊    ",
 			switch_to_tags = true,
 			size_hints_honor = false,
 		},
 	},
 	{
-		rule_any = { class = { "thunar" ,"Thunar"}, },
+		rule_any = { class = { "thunar", "Thunar" } },
 		properties = { screen = 1, tag = "⒋", switch_to_tags = true, placement = awful.placement.centered },
 	},
 	{
@@ -122,7 +122,7 @@ awful.rules.rules = {
 		},
 		properties = {
 			screen = 1,
-			tag = "⒌",
+			tag = "⒌   ",
 			switch_to_tags = true,
 			size_hints_honor = false,
 			floating = true,
@@ -134,7 +134,7 @@ awful.rules.rules = {
 		rule = { class = "v2rayN" },
 		properties = {
 			screen = 1,
-			tag = "⒍",
+			tag = "⒍   ",
 			switch_to_tags = false,
 			placement = awful.placement.centered,
 		},
@@ -143,26 +143,17 @@ awful.rules.rules = {
 		rule = { class = "mihomo-party" },
 		properties = {
 			screen = 1,
-			tag = "⒍",
+			tag = "⒍   ",
 			switch_to_tags = false,
 			placement = awful.placement.centered,
 		},
 	},
 	{
-		rule_any = { class = { "clash-verge" ,"Clash-verge"} },
+		rule_any = { class = { "clash-verge", "Clash-verge" } },
 		properties = {
 			screen = 1,
-			tag = "⒍",
+			tag = "⒍   ",
 			switch_to_tags = false,
-			placement = awful.placement.centered,
-		},
-	},
-	{
-		rule = { class = "jetbrains-clion" },
-		properties = {
-			screen = 1,
-			tag = "7",
-			switch_to_tags = true,
 			placement = awful.placement.centered,
 		},
 	},
