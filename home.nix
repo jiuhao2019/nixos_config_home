@@ -15,6 +15,7 @@
   home.file.".astylerc".source = ./dotfile/.astylerc;
   home.file.".gdbinit".source = ./dotfile/.gdbinit;
   home.file.".local/share/fcitx5/themes".source = ./fcitx5/themes;
+  home.file.".local/share/applications/mihomo.desktop".source = ./desktop/mihomo.desktop;
 
   xdg.configFile."awesome".source = ./.config/awesome;
   xdg.configFile."nvim".source = ./.config/nvim;
@@ -24,6 +25,8 @@
   xdg.configFile."rofi".source = ./.config/rofi;
   xdg.configFile."dunst".source = ./.config/dunst;
   xdg.configFile."lf".source = ./.config/lf;
+  # xdg.configFile."mihomo/config.yaml".source = ./.config/mihomo/config.yaml;
+  # xdg.configFile."mihomo/ui".source = ./.config/mihomo/ui;
 
   home.packages = with pkgs;[
     mermaid-cli

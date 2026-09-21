@@ -48,9 +48,9 @@ function zi
     cd (zoxide query -i | string collect)
 end
 # 代理
-#set -x http_proxy http://127.0.0.1:7890
-#set -x https_proxy http://127.0.0.1:7890
-#set -x NO_PROXY 127.0.0.1,localhost
+set -x http_proxy http://127.0.0.1:7890
+set -x https_proxy http://127.0.0.1:7890
+set -x NO_PROXY 127.0.0.1,localhost
 
 # 差异比较程序
 set -x DIFFPROG vimdiff
@@ -62,7 +62,7 @@ function inverse_cd
 end
 bind \co inverse_cd
 
-#覆盖+安静模式
+# 覆盖+安静模式
 # 解压当前文件夹
 function unzip_here
     set -l zip_files *.zip
@@ -82,17 +82,10 @@ function unzip_here
         unzip -o $file  # -o 覆盖已有文件
     end
 end
-function proxy_paru
-    env \
-        http_proxy=http://127.0.0.1:7897 \
-        https_proxy=http://127.0.0.1:7897 \
-        all_proxy=socks5h://127.0.0.1:7897 \
-        paru $argv
-end
 
 set -x MAKEFLAGS "-j"(nproc)
 
-set -x WEBKIT_DISABLE_DMABUF_RENDERER 1
+# set -x WEBKIT_DISABLE_DMABUF_RENDERER 1
 
 function lf
     set tmp (mktemp)
