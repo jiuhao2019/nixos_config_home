@@ -44,9 +44,7 @@ end
 
 # starship init fish | source
 zoxide init fish | source
-function zi
-    cd (zoxide query -i | string collect)
-end
+alias zz zi
 # 代理
 set -x http_proxy http://127.0.0.1:7890
 set -x https_proxy http://127.0.0.1:7890
