@@ -38,7 +38,8 @@
     wget
     curl
     git
-	mihomo
+    mihomo
+	flclash
   ];
 
   environment.variables = {
