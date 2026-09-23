@@ -23,12 +23,17 @@ proxy-groups:
     type: select
     use:
       - starlink
-      - gougou
 
   - name: GOUGOU
     type: select
     use:
       - gougou
+
+  - name: PROXY
+    type: select
+    proxies:
+      - STARLINK
+      - GOUGOU
 
 rules:
   - MATCH,PROXY
