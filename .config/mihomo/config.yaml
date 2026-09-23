@@ -19,10 +19,15 @@ proxy-providers:
     interval: 86400
 
 proxy-groups:
-  - name: PROXY
+  - name: STARLINK
     type: select
     use:
       - starlink
+      - gougou
+
+  - name: GOUGOU
+    type: select
+    use:
       - gougou
 
 rules:
