@@ -104,7 +104,7 @@ awful.rules.rules = {
 		},
 	},
 	{
-		rule_any = { class = "Emacs" },
+		rule = { class = "Emacs" },
 		properties = {
 			screen = 1,
 			tag = "⒊   ",
@@ -113,8 +113,13 @@ awful.rules.rules = {
 		},
 	},
 	{
-		rule_any = { class = "Thunar" },
-		properties = { screen = 1, tag = "⒋   ", switch_to_tags = true, placement = awful.placement.centered },
+		rule = { class = "Thunar" },
+		properties = {
+			screen = 1,
+			tag = "⒋   ",
+			switch_to_tags = true,
+			placement = awful.placement.centered,
+		},
 	},
 	{
 		rule_any = {
@@ -145,7 +150,7 @@ awful.rules.rules = {
 		},
 	},
 	{
-		rule_any = { class = "Com.follow.clash" },
+		rule = { class = "Com.follow.clash" },
 		properties = {
 			screen = 1,
 			tag = "⒍   ",
