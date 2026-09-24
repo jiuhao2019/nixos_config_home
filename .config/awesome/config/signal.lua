@@ -18,6 +18,7 @@ local focus_sta = require("function.table")
 -- ----------------------
 local no_urgent_class = {
 	v2rayN = true,
+	FlClash = true,
 	["clash-verge"] = true,
 	["mihomo-party"] = true,
 }
