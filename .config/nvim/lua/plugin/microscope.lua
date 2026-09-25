@@ -1,1 +1,1 @@
-require("microscope").setup()
+require("microscope").setup({})
