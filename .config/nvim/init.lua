@@ -54,7 +54,7 @@ require("plugin.scroll-it")
 -- 实时显示颜色
 require("plugin.colorize")
 
-require("plugin.microscope")
+-- require("plugin.microscope")
 ---- ---------------------------------------- 自定义的功能函数
 require("functions.quickfix_next").setup()
 require("functions.multi_substitue").setup()
