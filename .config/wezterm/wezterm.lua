@@ -19,5 +19,12 @@ local config = utils.merge(table.unpack(modules))
 config.color_scheme = "Gruvbox Dark (Gogh)"
 config.colors = {
 	background = "#32302f",
+
+	colors = {
+		-- 光标
+		cursor_fg = "#282828", -- 光标框中文字颜色
+		cursor_bg = "#ebdbb2", -- 光标块颜色
+		cursor_border = "#ebdbb2", -- 光标边框颜色
+	},
 }
 return config
