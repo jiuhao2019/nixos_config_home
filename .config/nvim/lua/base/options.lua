@@ -239,7 +239,8 @@ vim.o.equalalways = false
 -- vim.o.winfixwidth = true
 
 -- vim.o.guicursor = "n-v-c-sm:underline,i-ci-ve:ver25,r-cr-o:hor20,t:block-blinkon500-blinkoff500-TermCursor"
-vim.o.guicursor = "n-v-c-sm:hor20,i-ci-ve:ver25,r-cr-o:block,t:hor20"
+-- vim.o.guicursor = "n-v-c-sm:hor20,i-ci-ve:ver25,r-cr-o:block,t:hor20"
+vim.o.guicursor = "n:block,v-c-sm:hor20,i-ci-ve:ver25,r-cr-o:block,t:hor20"
 -- vim.o.guicursor = "a:hor20"
 
 -- vim.cmd("set nomore")

@@ -199,3 +199,4 @@ function AppendCharAtLineEnd()
 end
 
 map("n","<leader>c", ":ColorizerToggle<CR>")
+map("n","<leader>rd", ":MicroscopePeek<CR>")
