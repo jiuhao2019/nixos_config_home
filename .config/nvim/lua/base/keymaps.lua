@@ -197,3 +197,5 @@ function AppendCharAtLineEnd()
 		vim.cmd("w | noh | echo ''")
 	end
 end
+
+map("n","<leader>c", ":ColorizerToggle<CR>")
