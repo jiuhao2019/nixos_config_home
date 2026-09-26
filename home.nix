@@ -73,8 +73,9 @@ home.packages =
     ripgrep
     xclip
     tree
-    pkgs.bibata-cursors
+    bibata-cursors
     flclash
+    feh
   ])
   ++ (with pkgs-unstable; [
     mihomo
