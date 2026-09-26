@@ -19,7 +19,7 @@ local focus_sta = require("function.table")
 local no_urgent_class = {
 	v2rayN = true,
 	FlClash = true,
-	["clash-verge"] = true,
+	["Clash-verge"] = true,
 	["mihomo-party"] = true,
 }
 client.connect_signal("property::urgent", function(c)
