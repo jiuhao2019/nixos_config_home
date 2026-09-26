@@ -158,5 +158,14 @@ awful.rules.rules = {
 			placement = awful.placement.centered,
 		},
 	},
+	{
+		rule = { class = "Clash-nyanpasu" },
+		properties = {
+			screen = 1,
+			tag = "⒍   ",
+			switch_to_tags = false,
+			placement = awful.placement.centered,
+		},
+	},
 }
 -- }}}
