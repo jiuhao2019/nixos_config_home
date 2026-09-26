@@ -70,9 +70,90 @@ local function resize_top(c, delta)
 
 	c:geometry(g)
 end
+-- 切换壁纸
+local wallpaper_dir = os.getenv("HOME") .. "/.local/share/backgrounds/gruvbox/wallpapers"
+
+local wallpaper_state = os.getenv("HOME") .. "/.cache/awesome-wallpaper"
+
+local wallpapers = {}
+
+-- 递归查找壁纸
+local pipe = io.popen(
+	"find "
+		.. wallpaper_dir
+		.. " -type f "
+		.. "\\( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \\) "
+		.. "| sort"
+)
+
+if pipe then
+	for file in pipe:lines() do
+		table.insert(wallpapers, file)
+	end
+	pipe:close()
+end
+
+-- 上次使用的壁纸
+local wallpaper_index = 1
+
+local state_file = io.open(wallpaper_state, "r")
+
+if state_file then
+	local last_wallpaper = state_file:read("*l")
+	state_file:close()
+
+	if last_wallpaper then
+		for i, file in ipairs(wallpapers) do
+			if file == last_wallpaper then
+				wallpaper_index = i
+				break
+			end
+		end
+	end
+end
+
+local function save_wallpaper()
+	local file = io.open(wallpaper_state, "w")
+
+	if file then
+		file:write(wallpapers[wallpaper_index])
+		file:close()
+	end
+end
+
+local function set_wallpaper()
+	if #wallpapers == 0 then
+		return
+	end
+
+	awful.spawn({
+		"feh",
+		"--bg-fill",
+		wallpapers[wallpaper_index],
+	})
+end
+
+local function next_wallpaper()
+	if #wallpapers == 0 then
+		return
+	end
+
+	wallpaper_index = wallpaper_index % #wallpapers + 1
+
+	save_wallpaper()
+	set_wallpaper()
+end
+
+set_wallpaper()
+-- end 切换壁纸
+
 -- {{{ ----------------------------------------------------------------Keys
 
 globalkeys = gears.table.join(
+	awful.key({ modkey }, "w", next_wallpaper, {
+		description = "next wallpaper",
+		group = "wallpaper",
+	}),
 	-- 吸附左屏幕
 	awful.key({ modkey, "Shift" }, "h", function()
 		local c = client.focus
@@ -85,40 +166,40 @@ globalkeys = gears.table.join(
 		end
 	end),
 	-- 吸附右屏幕
-    awful.key({ modkey, "Shift" }, "l", function()
-        local c = client.focus
-        if c then
-            local wa = c.screen.workarea
-            c:geometry({
-                x = wa.x + wa.width - c.width,
-                y = c.y,
-            })
-        end
-    end),
+	awful.key({ modkey, "Shift" }, "l", function()
+		local c = client.focus
+		if c then
+			local wa = c.screen.workarea
+			c:geometry({
+				x = wa.x + wa.width - c.width,
+				y = c.y,
+			})
+		end
+	end),
 
 	-- 吸附上屏幕
-    awful.key({ modkey, "Shift" }, "k", function()
-        local c = client.focus
-        if c then
-            local wa = c.screen.workarea
-            c:geometry({
-                x = c.x,
-                y = wa.y,
-            })
-        end
-    end),
+	awful.key({ modkey, "Shift" }, "k", function()
+		local c = client.focus
+		if c then
+			local wa = c.screen.workarea
+			c:geometry({
+				x = c.x,
+				y = wa.y,
+			})
+		end
+	end),
 
 	-- 吸附下屏幕
-    awful.key({ modkey, "Shift" }, "j", function()
-        local c = client.focus
-        if c then
-            local wa = c.screen.workarea
-            c:geometry({
-                x = c.x,
-                y = wa.y + wa.height - c.height,
-            })
-        end
-    end),
+	awful.key({ modkey, "Shift" }, "j", function()
+		local c = client.focus
+		if c then
+			local wa = c.screen.workarea
+			c:geometry({
+				x = c.x,
+				y = wa.y + wa.height - c.height,
+			})
+		end
+	end),
 	-- Show/hide wibox,即隐藏/显示顶部和底部的bar
 	-- ---------------
 	awful.key({ modkey }, "b", function()
