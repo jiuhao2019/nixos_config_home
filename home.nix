@@ -1,5 +1,9 @@
 { config, pkgs, inputs, ... }:
-
+let
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+  };
+in
 {
   home.username = "microvee";
   home.homeDirectory = "/home/microvee";
@@ -28,7 +32,8 @@
   xdg.configFile."mihomo/config.yaml".source = ./.config/mihomo/config.yaml;
   xdg.configFile."mihomo/ui".source = ./.config/mihomo/ui;
 
-  home.packages = with pkgs; [
+home.packages =
+  (with pkgs; [
     mermaid-cli
     plantuml
     graphviz
@@ -68,12 +73,10 @@
     xclip
     tree
     pkgs.bibata-cursors
-  ];
-
-  home.packages = [
-    inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.clash-verge-rev
-  ];
-
+  ])
+  ++ (with pkgs-unstable; [
+    clash-verge-rev
+  ]);
 
   home.pointerCursor = {
     enable = true;
