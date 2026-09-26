@@ -39,7 +39,8 @@
     curl
     git
     mihomo
-	flclash
+    flclash
+    clash-nyanpasu
   ];
 
   environment.variables = {
