@@ -375,7 +375,7 @@ Before doing so, re-align the table if necessary."
 ;;                 end
 ;;============================================================
 (defun my-org-remove-structure-template ()
-  "Remove the delimiters of the current Org structure block."
+  "Remove the begin/end delimiters of the current Org structure block."
   (interactive)
   (let ((element (org-element-context)))
     (when (memq (org-element-type element)
@@ -387,21 +387,20 @@ Before doing so, re-align the table if necessary."
                   verse-block
                   comment-block
                   special-block))
-      (let* ((begin (org-element-property :begin element))
-             (contents-begin (org-element-property :contents-begin element))
-             (contents-end (org-element-property :contents-end element))
-             (end (org-element-property :end element))
-             (end-marker (copy-marker end)))
+      (let ((begin (org-element-property :begin element))
+            (end (org-element-property :end element)))
 
-        ;; Remove #+begin_xxx line.
-        (delete-region begin contents-begin)
+        ;; Delete #+end_xxx first, so BEGIN does not move.
+        (goto-char end)
+        (forward-line -1)
+        (delete-region (line-beginning-position)
+                       (min (point-max)
+                            (1+ (line-end-position))))
 
-        ;; Remove #+end_xxx line.
-        (goto-char end-marker)
-        (set-marker end-marker nil)
-        (delete-region
-         (line-beginning-position)
-         (min (point-max)
-              (1+ (line-end-position))))))))
+        ;; Delete #+begin_xxx.
+        (goto-char begin)
+        (delete-region (line-beginning-position)
+                       (min (point-max)
+                            (1+ (line-end-position))))))))
 
 (provide 'user-org)
