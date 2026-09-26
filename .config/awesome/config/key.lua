@@ -70,7 +70,9 @@ local function resize_top(c, delta)
 
 	c:geometry(g)
 end
+
 -- 切换壁纸
+--
 local wallpaper_dir = os.getenv("HOME") .. "/.local/share/backgrounds/gruvbox/wallpapers"
 
 local wallpaper_state = os.getenv("HOME") .. "/.cache/awesome-wallpaper"
@@ -143,15 +145,28 @@ local function next_wallpaper()
 	save_wallpaper()
 	set_wallpaper()
 end
+local function previous_wallpaper()
+	if #wallpapers == 0 then
+		return
+	end
 
+	wallpaper_index = (wallpaper_index - 2) % #wallpapers + 1
+
+	save_wallpaper()
+	set_wallpaper()
+end
 set_wallpaper()
 -- end 切换壁纸
 
 -- {{{ ----------------------------------------------------------------Keys
 
 globalkeys = gears.table.join(
-	awful.key({ modkey }, "w", next_wallpaper, {
-		description = "next wallpaper",
+	awful.key({ modkey, "Shift" }, "w", next_wallpaper, {
+		description = "previous wallpaper",
+		group = "wallpaper",
+	}),
+	awful.key({ modkey, "Control" }, "w", previous_wallpaper, {
+		description = "previous wallpaper",
 		group = "wallpaper",
 	}),
 	-- 吸附左屏幕
