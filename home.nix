@@ -73,10 +73,10 @@ home.packages =
     xclip
     tree
     pkgs.bibata-cursors
+    flclash
   ])
   ++ (with pkgs-unstable; [
     mihomo
-    flclash
     clash-verge-rev
   ]);
 
