@@ -1,1 +1,1 @@
-require("unclash").setup()
+require("unclash")
