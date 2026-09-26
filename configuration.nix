@@ -19,6 +19,7 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
   nix.settings.substituters = [ 
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=5" 
     "https://mirrors.ustc.edu.cn/nix-channels/store?priority=10" 
@@ -28,7 +29,7 @@
   networking.hostName = "nixos"; 
   networking.networkmanager.enable = true;
   networking.proxy.default = "http://127.0.0.1:7890";
-  networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.proxy.noProxy = "127.0.0.1,localhost";
   networking.firewall.enable = false;
 
   time.timeZone = "Asia/Shanghai";
