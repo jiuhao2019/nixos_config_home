@@ -58,6 +58,13 @@ local function ShowFloat(opts_override)
 		"leader px      del-group-dir",
 		"leader ps      sync-group-dir",
 		"leader pl      list-group-dir",
+		"leader ct      toggle-color-hex",
+		"leader ]x      next-conflict",
+		"leader [x      prev-conflict",
+		"leader co      open-conflict",
+		"leader cc      conflict-accept-cur",
+		"leader ci      conflict-accept-incoming",
+		"leader cb      conflict-accept-both",
 	}
 
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)

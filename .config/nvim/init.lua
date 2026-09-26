@@ -54,6 +54,13 @@ require("plugin.scroll-it")
 -- 实时显示颜色
 require("plugin.colorize")
 
+-- git冲突处理
+-- A lightweight, feature-rich merge conflict manager for Neovim, written in Lua.
+-- unclash.nvim automatically detects, highlights, 
+-- and helps you resolve merge conflicts with ease. 
+-- It includes a 3-way merge editor, clickable actions, and seamless integration with existing tools.
+require("plugin.unclash")
+
 ---- ---------------------------------------- 自定义的功能函数
 require("functions.quickfix_next").setup()
 require("functions.multi_substitue").setup()

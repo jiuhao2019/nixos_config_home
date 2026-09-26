@@ -170,7 +170,6 @@ map("n", "<leader>e", function()
 	require("functions.toggle_c_h").toggle()
 end, { desc = "Toggle .c/.h (same dir only)" })
 
-
 -- locate open file
 -- vim.keymap.set("n", "<leader>l", "<cmd>Neotree reveal<cr>")
 vim.keymap.set("n", "<leader>l", function()
@@ -198,5 +197,15 @@ function AppendCharAtLineEnd()
 	end
 end
 
-map("n","<leader>c", ":ColorizerToggle<CR>")
-map("n","<leader>rd", ":MicroscopePeek<CR>")
+map("n", "<leader>ct", ":ColorizerToggle<CR>")
+
+local unclash = require("unclash")
+
+map("n", "]x", unclash.next_conflict, { desc = "Next Conflict" })
+map("n", "[x", unclash.prev_conflict, { desc = "Prev Conflict" })
+map("n", "<leader>co", unclash.open_merge_editor, { desc = "Open Merge Editor" })
+
+-- Helper to accept conflicts
+map("n", "<leader>cc", unclash.accept_current, { desc = "Accept Current" })
+map("n", "<leader>ci", unclash.accept_incoming, { desc = "Accept Incoming" })
+map("n", "<leader>cb", unclash.accept_both, { desc = "Accept Both" })

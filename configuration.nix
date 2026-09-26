@@ -40,7 +40,7 @@
     git
     mihomo
     flclash
-    clash-nyanpasu
+    clashtui
   ];
 
   environment.variables = {
