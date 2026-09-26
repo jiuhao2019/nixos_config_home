@@ -38,9 +38,6 @@
     wget
     curl
     git
-    mihomo
-    flclash
-    clashtui
   ];
 
   environment.variables = {

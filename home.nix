@@ -75,6 +75,8 @@ home.packages =
     pkgs.bibata-cursors
   ])
   ++ (with pkgs-unstable; [
+    mihomo
+    flclash
     clash-verge-rev
   ]);
 
