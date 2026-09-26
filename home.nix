@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, pkgs-unstable, inputs, ... }:
 
 {
   home.username = "microvee";
@@ -28,11 +28,11 @@
   xdg.configFile."mihomo/config.yaml".source = ./.config/mihomo/config.yaml;
   xdg.configFile."mihomo/ui".source = ./.config/mihomo/ui;
 
-  home.packages = with pkgs;[
+  home.packages = (with pkgs; [
     mermaid-cli
     plantuml
     graphviz
-	pandoc
+    pandoc
     prettier
     stylua
     diffnav
@@ -45,7 +45,7 @@
     clang
     clang-tools
     emacs
-    btop  
+    btop
     neovim
     picom
     rofi
@@ -58,7 +58,7 @@
     fastfetch
     nh
     open-vm-tools
-    eza 
+    eza
     lf
     wezterm
     tmux
@@ -68,7 +68,11 @@
     xclip
     tree
     pkgs.bibata-cursors
-  ];
+  ])
+
+  ++ (with pkgs-unstable; [
+    clash-verge-rev
+  ]);
   home.pointerCursor = {
     enable = true;
     package = pkgs.bibata-cursors;
