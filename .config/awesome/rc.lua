@@ -90,7 +90,7 @@ run_once("emacs","emacs")
 -- run_once("clash-nyanpasu","clash-nyanpasu")
 run_once("chromium","chromium")
 run_once("wezterm-gui", "wezterm start -- tmux")
--- run_once("feh","feh --randomize --bg-fill ~/wallpapers")
+run_once("feh","feh --randomize --bg-fill ~/.local/share/backgrounds/gruvbox/wallpapers/")
 -- }}}
 
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
